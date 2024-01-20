@@ -1,9 +1,17 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { PokeApiResponse } from '../models/poke-api-response.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PokeApiService {
+  private baseUrl: string = 'https://pokeapi.co/api/v2/';
 
-  constructor() { }
+  constructor(private http: HttpClient) {}
+
+  getFirst100Pokemons(): Observable<PokeApiResponse> {
+    return this.http.get<PokeApiResponse>(`${this.baseUrl}pokemon?limit=100&offset=0`);
+  }
 }
