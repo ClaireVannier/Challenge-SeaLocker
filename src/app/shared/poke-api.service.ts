@@ -12,6 +12,12 @@ export class PokeApiService {
   constructor(private http: HttpClient) {}
 
   getFirst100Pokemons(): Observable<PokeApiResponse> {
-    return this.http.get<PokeApiResponse>(`${this.baseUrl}pokemon?limit=100&offset=0`);
+    return this.http.get<PokeApiResponse>(
+      `${this.baseUrl}pokemon?limit=100&offset=0`
+    );
+  }
+
+  getPokemonDetailsByName(name: string): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}pokemon/${name}`);
   }
 }
