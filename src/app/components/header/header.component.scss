@@ -1,0 +1,26 @@
+div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  box-shadow: 1px 1px 2px 1px #3065b03d;
+  background-color: #3065b0;
+
+  .back-home {
+    padding: 0.5em;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      background: #1856ad;
+      cursor: pointer;
+    }
+  }
+
+  .title {
+    font-weight: 600;
+    font-size: 25px;
+  }
+
+  img {
+    width: 100px;
+  }
+}
