@@ -1,0 +1,19 @@
+footer {
+  background-color: #3065b0;
+  padding: 1em;
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+    margin-bottom: 0.5em;
+    cursor: pointer;
+  }
+
+  a:visited {
+    color: white;
+  }
+}
