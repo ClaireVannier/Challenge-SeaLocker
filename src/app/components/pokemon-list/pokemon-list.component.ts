@@ -10,14 +10,26 @@ import { PokeApiResult } from '../../models/poke-api-result.model';
 })
 export class PokemonListComponent implements OnInit {
   pokemons: PokeApiResult[] = [];
+  currentPagePokemons: PokeApiResult[] = [];
+  pages = new Array(10);
 
   constructor(private pokeApiService: PokeApiService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.pokeApiService
       .getFirst100Pokemons()
       .subscribe((response: PokeApiResponse) => {
         this.pokemons = response.results;
+        this.changePagination(1);
       });
+  }
+
+  changePagination(currentPage: number): void {
+    const itemsPerPage = 10;
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    this.currentPagePokemons = this.pokemons.slice(
+      startIndex,
+      startIndex + itemsPerPage
+    );
   }
 }

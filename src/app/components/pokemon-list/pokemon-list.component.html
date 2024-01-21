@@ -1,3 +1,20 @@
-<p *ngFor="let pokemon of pokemons">
-  <span [routerLink]="['details', pokemon.name]">{{ pokemon.name }}</span>
-</p>
+<section>
+  <table>
+    <tbody>
+      <tr *ngFor="let pokemon of currentPagePokemons; let i = index">
+        <td [routerLink]="['details', pokemon.name]">
+          {{ pokemon.name | titlecase }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="pagination">
+    <button
+      *ngFor="let btn of pages; let i = index"
+      (click)="changePagination(i + 1)"
+    >
+      {{ i + 1 }}
+    </button>
+  </div>
+</section>
