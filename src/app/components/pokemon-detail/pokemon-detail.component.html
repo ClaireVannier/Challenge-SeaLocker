@@ -1,6 +1,21 @@
 <div *ngIf="pokemonDetails">
+  <h3>Nom: {{ pokemonDetails.name }}</h3>
+
   <img
     src="{{ pokemonDetails.sprites.front_default }}"
-    alt="illustration du pokemon"
+    alt="{{ pokemonDetails.name }}"
   />
+  <div>
+    <span *ngFor="let element of pokemonDetails.types">
+      {{ element.type.name }}
+    </span>
+  </div>
+
+  <h4>Caractéristiques du pokémon:</h4>
+
+  <ul>
+    <li>Poids: {{ pokemonDetails.weight }}</li>
+    <li>Taille: {{ pokemonDetails.height }}</li>
+  </ul>
+
 </div>
