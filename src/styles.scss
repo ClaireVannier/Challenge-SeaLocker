@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+*,
+button,
+input {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.pokemon-name {
+  width: 100px;
+  text-align: center;
+  border: 1px solid #00000021;
+  padding: 0.5em;
+  cursor: pointer;
+  &:hover {
+    background-color: #00000021;
+  }
+}
