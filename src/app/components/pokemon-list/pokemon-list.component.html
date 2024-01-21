@@ -1,8 +1,9 @@
 <section>
+  <app-pokemon-search />
   <table>
     <tbody>
       <tr *ngFor="let pokemon of currentPagePokemons; let i = index">
-        <td [routerLink]="['details', pokemon.name]">
+        <td class="pokemon-name" [routerLink]="['details', pokemon.name]">
           {{ pokemon.name | titlecase }}
         </td>
       </tr>

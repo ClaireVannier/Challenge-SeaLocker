@@ -1,0 +1,29 @@
+<section>
+  <div class="search">
+    <label for="search">Rechercher un Pokémon :</label>
+    <div>
+      <input
+        type="search"
+        id="search"
+        (keyup)="isSearchToggled = false"
+        (keyup.enter)="search()"
+        [(ngModel)]="searchedPokemon"
+        placeholder="Golem"
+      />
+      <button (click)="search()">Go !</button>
+    </div>
+  </div>
+
+  <div class="result" *ngIf="foundPokemon; else noResult">
+    Résultat :
+    <p class="pokemon-name" [routerLink]="['details', foundPokemon.name]">
+      {{ foundPokemon.name }}
+    </p>
+  </div>
+
+  <ng-template #noResult>
+    <div *ngIf="isSearchToggled" class="no-result">
+      Aucun résultat pour "{{ searchedPokemon }}"
+    </div>
+  </ng-template>
+</section>
