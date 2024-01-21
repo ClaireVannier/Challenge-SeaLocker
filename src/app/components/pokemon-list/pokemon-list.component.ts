@@ -17,7 +17,6 @@ export class PokemonListComponent implements OnInit {
     this.pokeApiService
       .getFirst100Pokemons()
       .subscribe((response: PokeApiResponse) => {
-        console.log(response);
         this.pokemons = response.results;
       });
   }
