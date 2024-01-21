@@ -1,0 +1,44 @@
+button {
+  margin: 1em;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 74.6vh;
+
+  table {
+    width: fit-content;
+    margin: 1em;
+    border-collapse: separate;
+    border-spacing: 1em;
+    margin: 1em auto;
+
+    tbody {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    tr {
+      width: 20%;
+
+      td {
+        width: 100px;
+        text-align: center;
+        border: 1px solid #00000021;
+        padding: 0.5em;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        &:hover {
+          background-color: #00000021;
+        }
+      }
+    }
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+  }
+}
