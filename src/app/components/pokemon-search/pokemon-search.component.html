@@ -12,18 +12,18 @@
       />
       <button (click)="search()">Go !</button>
     </div>
-  </div>
-
-  <div class="result" *ngIf="foundPokemon; else noResult">
-    Résultat :
-    <p class="pokemon-name" [routerLink]="['details', foundPokemon.name]">
-      {{ foundPokemon.name }}
-    </p>
-  </div>
-
-  <ng-template #noResult>
-    <div *ngIf="isSearchToggled" class="no-result">
-      Aucun résultat pour "{{ searchedPokemon }}"
+    <div class="result" *ngIf="foundPokemon; else noResult">
+      Résultat :
+      <p class="pokemon-name" [routerLink]="['details', foundPokemon.name]">
+        {{ foundPokemon.name }}
+      </p>
     </div>
-  </ng-template>
+
+    <ng-template #noResult>
+      <div *ngIf="isSearchToggled" class="no-result">
+        Aucun résultat pour "{{ searchedPokemon }}"
+      </div>
+    </ng-template>
+  </div>
+
 </section>

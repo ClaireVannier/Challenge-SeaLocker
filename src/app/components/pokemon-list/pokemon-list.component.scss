@@ -6,7 +6,6 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 74.6vh;
 
   table {
     width: fit-content;
@@ -18,15 +17,17 @@ section {
     tbody {
       display: flex;
       flex-wrap: wrap;
+      max-width: 800px;
     }
 
     tr {
-      width: 20%;
+      flex-grow: 1;
     }
   }
 
   .pagination {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
   }
 }
