@@ -1,21 +1,24 @@
-<div *ngIf="pokemonDetails">
-  <h3>Nom: {{ pokemonDetails.name }}</h3>
+<div class="card" *ngIf="pokemonDetails">
+  <div class="card-header">
+    <img
+      src="{{ pokemonDetails.sprites.front_default }}"
+      alt="{{ pokemonDetails.name }}"
+    />
+    <h3>{{ pokemonDetails.name | titlecase }}</h3>
 
-  <img
-    src="{{ pokemonDetails.sprites.front_default }}"
-    alt="{{ pokemonDetails.name }}"
-  />
-  <div>
-    <span *ngFor="let element of pokemonDetails.types">
-      {{ element.type.name }}
-    </span>
+    <div class="types-container">
+      <span
+        *ngFor="let element of pokemonDetails.types"
+        [pokemonType]="element.type.name"
+      >
+        {{ element.type.name | uppercase }}
+      </span>
+    </div>
   </div>
 
-  <h4>Caractéristiques du pokémon:</h4>
-
+  <h4>Caractéristiques du Pokémon</h4>
   <ul>
-    <li>Poids: {{ pokemonDetails.weight }}</li>
-    <li>Taille: {{ pokemonDetails.height }}</li>
+    <li>Poids : {{ pokemonDetails.weight }} hg</li>
+    <li>Taille : {{ pokemonDetails.height }} dm</li>
   </ul>
-
 </div>
